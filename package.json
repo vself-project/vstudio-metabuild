@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cd frontend-demo && npm run dev",
+    "build": "cd frontend-demo && npm run build ",
     "start": "cd frontend-demo && npm run start",
     "publish:shared": "cd shared-utils/pkg && npm publish --access=public",
     "test:shared": "wasm-pack test shared-utils --headless --chrome",

@@ -182,4 +182,5 @@ const ClaimBadge: NextPage = memo(() => {
     );
 });
 
+ClaimBadge.displayName = "ClaimBadge";
 export default ClaimBadge;
