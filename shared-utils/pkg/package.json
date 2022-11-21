@@ -1,0 +1,27 @@
+{
+  "name": "@vself_project/shared-utils",
+  "collaborators": [
+    "sergantche"
+  ],
+  "version": "0.3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vself-project/vstudio-metabuild"
+  },
+  "files": [
+    "shared_utils_bg.wasm",
+    "shared_utils.js",
+    "shared_utils_bg.js",
+    "shared_utils.d.ts"
+  ],
+  "module": "shared_utils.js",
+  "homepage": "...",
+  "types": "shared_utils.d.ts",
+  "sideEffects": false,
+  "keywords": [
+    "zkp",
+    "set-membership",
+    "bulletproofs",
+    "wasm-pack"
+  ]
+}

@@ -1,0 +1,61 @@
+[package]
+name = "shared-utils"
+version = "0.3.0"
+authors = ["sergantche"]
+edition = "2021"
+
+# These URLs point to more information about the repository.
+documentation = "..."
+homepage = "..."
+repository = "https://github.com/vself-project/vstudio-metabuild"
+
+# This points to a file in the repository (relative to this `Cargo.toml`). The
+# contents of this file are stored and indexed in the registry.
+readme = "..."
+
+# This is a small list of keywords used to categorize and search for this
+# package.
+keywords = ["zkp", "set-membership", "bulletproofs", "wasm-pack"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+# https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html
+serde = { version = "1.0", features = ["derive"] }
+serde-wasm-bindgen = "0.4"
+wasm-bindgen = { version = "0.2.83", features = ["serde-serialize"] }
+# https://rustwasm.github.io/wasm-bindgen/examples/console-log.html
+web-sys = { version = "0.3.59", features = ['console'] }
+
+# Bulletproofs
+uint = { version = "0.9.3", default-features = false }
+rand = "0.8"
+getrandom = { version = "0.2", features = ["js"] }
+bulletproofs = { version = "4", features = ["std", "avx2_backend", "yoloproofs"]}
+ed25519-dalek = "1.0.1"
+curve25519-dalek = { package = "curve25519-dalek-ng", version = "4", default-features = false, features = ["u64_backend", "nightly", "serde", "alloc"] }
+merlin = { version = "3", default-features = false }
+# ed25519-consensus = "2.0.1"
+
+
+# The `console_error_panic_hook` crate provides better debugging of panics by
+# logging them with `console.error`. This is great for development, but requires
+# all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
+# code size when deploying.
+console_error_panic_hook = { version = "0.1.6", optional = true }
+
+# `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
+# compared to the default allocator's ~10K. It is slower than the default
+# allocator, however.
+wee_alloc = { version = "0.4.5", optional = true }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.33"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"

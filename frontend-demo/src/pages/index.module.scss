@@ -1,0 +1,122 @@
+.home {
+    .description_container {
+        font-family: 'Cy Grotesk';
+        font-style: normal;
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        margin-bottom: 65px;
+        position: relative;
+
+        .doll_container {
+            position: absolute;
+            display: flex;
+
+            .doll_img_container {
+                width: 180px;
+            }
+
+            .try_now_badge_container {
+                padding: 10px 0px;
+
+                .try_now_badge {
+                    background: #FB40FF;
+                    border-radius: 20px;
+                    font-weight: 700;
+                    font-size: 16px;
+                    text-align: center;
+                    color: #3D3D3D;
+                    padding: 10px 25px;
+                    font-family: "Inter";
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        height: 0;
+                        width: 0;
+                        transform: translateY(20%);
+                        z-index: 2;
+                        border-top: 12px solid #FB40FF;
+                        border-bottom: 0px solid transparent;
+                        border-left: 0px solid transparent;
+                        border-right: 20px solid transparent;
+                        top: 36px;
+                        right: calc(50% - 65px);
+                    }
+                }
+            }
+        }
+    }
+
+    .community_description {
+        display: flex;
+        text-align: left;
+        align-items: center;
+        margin: 50px 20px;
+        border-radius: 17px;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.65;
+        }
+
+        &:active {
+            opacity: 0.85;
+            -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+        }
+
+        .star1_container {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: -25px;
+            left: -25px;
+        }
+
+        .star2_container {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: -100px;
+            left: 10px;
+        }
+
+        .star3_container {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: -40px;
+            right: 50px;
+        }
+
+        .img_container {
+            display: flex;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+        }
+
+        .content {
+            padding-right: 50px;
+
+            .content_text {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+    }
+
+    .join_community {
+        background: #3D50F9;
+        color: #FFFFFF;
+    }
+
+    .create_community {
+        background: #41F092;
+        color: #3D3D3D;
+    }
+}
