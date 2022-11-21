@@ -10,6 +10,8 @@ import { Row, Col } from "react-bootstrap";
 import type { ICommunityInfo } from "../../data/interfaces";
 import { useContractInteractor } from "../../utils";
 
+const logoUrl = `https://firebasestorage.googleapis.com/v0/b/vself-prod.appspot.com/o/vSelf%20community.png?alt=media&token=27d6fcb7-6ffe-4718-84b6-0a7640c57bfd`;
+
 const Communities: NextPage = memo(() => {
   const router = useRouter();
   const { viewMethod } = useContractInteractor();
@@ -96,6 +98,10 @@ const Communities: NextPage = memo(() => {
                         alt="community_source_image"
                         width={120}
                         height={120}
+                        onError={({ currentTarget }) => {
+                          currentTarget.onerror = null; // prevents looping
+                          currentTarget.src = logoUrl;
+                        }}
                       />
                     </div>
                     <div className="text-left">
