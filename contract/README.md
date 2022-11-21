@@ -11,5 +11,3 @@ The contract stores data about communities using several collections:
 `public_members_by_community` - a map from `community_id` to a map `commitment -> near_account`;
 
 The difference between private and public members that it's unknown which NEAR user is a member of community, we know only information about their commitments. The map `public_members_by_community` stores NEAR account corresponding to the commitment.
-
-## Change methods
