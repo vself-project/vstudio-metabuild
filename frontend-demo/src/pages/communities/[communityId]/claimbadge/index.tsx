@@ -12,6 +12,7 @@ import { useContractInteractor } from "../../../../utils";
 import { useWalletSelector } from "../../../../contexts/WalletSelectorContext";
 import { CHECK_URL } from "../../../../constants";
 
+
 const ClaimBadge: NextPage = memo(() => {
     const router = useRouter();
     const { selector, modal, accounts, accountId } = useWalletSelector();
@@ -61,22 +62,15 @@ const ClaimBadge: NextPage = memo(() => {
             const operationStatus = await callMethod({ method: "add_public_member", args });
             if (operationStatus) {
                 setIsProcessing(false);
-                router.push(`/communities/${router.query.communityId}/claimbadge/success`);
-                // const config = {
-                //     params: {
-                //         eventid: communityInfo?.badge_event_id,
-                //         nearid: accountId,
-                //         qr: communityInfo?.community_name
-                //     },
-                // };
-
-                // const rsp = (await axios.get(CHECK_URL, config)).data;
-                // setIsProcessing(false);
-                // if (rsp?.errorMessage == null && rsp?.index != -1) {
-                //     router.push(`/communities/${router.query.communityId}/claimbadge/success`);
-                // } else {
-                //     router.push(`/communities/${router.query.communityId}/claimbadge/error`);
-                // }
+                const url = `/api/checkin?eventid=${communityInfo?.badge_event_id}&nearid=${accountId}&qr=${communityInfo?.community_name}`;
+                const rsp = await fetch(url);
+                const res = await rsp.json();
+                setIsProcessing(false);
+                if (res?.errorMessage == null && res?.index != -1) {
+                    router.push(`/communities/${router.query.communityId}/claimbadge/success`);
+                } else {
+                    router.push(`/communities/${router.query.communityId}/claimbadge/error`);
+                }
             } else {
                 setIsProcessing(false);
                 setMessageType("Error");
