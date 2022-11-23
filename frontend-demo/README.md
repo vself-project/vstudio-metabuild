@@ -5,6 +5,6 @@ You can use it to interact with community contract, generate proof of membership
 
 To run this demo web applicaton use:
 ```bash
-yarn;
-yarn dev;
+yarn
+yarn dev
 ```
