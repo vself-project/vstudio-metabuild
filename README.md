@@ -17,7 +17,7 @@ We wish to demonstrate our design and implementation of an advanced community me
 
 ## Our code and deliverables
 
-### Frontend (DEMO)
+### Frontend ([DEMO](https://zkp-demo.web.app/))
 
 Frontend application is built using Next.js metaframework and authorization is done via WalletSelector package maintained by NEAR. Frontend uses our public npm package for all
 client side cryptography. Also we used [T3 Stack](https://github.com/t3-oss/create-t3-app) boilerplate to add Typescript and Tailwind
