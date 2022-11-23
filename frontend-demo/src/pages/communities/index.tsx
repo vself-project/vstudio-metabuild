@@ -3,7 +3,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { type NextPage } from "next";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { memo, useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
@@ -92,16 +91,11 @@ const Communities: NextPage = memo(() => {
                     }
                   >
                     <div className="absolute md:w-[160px] md:h-[160px] md:top-[-30px] md:right-[-10px]">
-                      <Image
-                        layout="responsive"
+                      <img
                         src={String(new URL(item.community_source_image))}
                         alt="community_source_image"
                         width={120}
                         height={120}
-                        onError={({ currentTarget }) => {
-                          currentTarget.onerror = null; // prevents looping
-                          currentTarget.src = logoUrl;
-                        }}
                       />
                     </div>
                     <div className="text-left">

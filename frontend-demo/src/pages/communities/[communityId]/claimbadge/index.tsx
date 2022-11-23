@@ -109,8 +109,7 @@ const ClaimBadge: NextPage = memo(() => {
                         <div className="flex-none w-[125px] rounded-full">
                             {
                                 communityInfo && communityInfo?.community_source_image && (
-                                    <Image
-                                        layout="responsive"
+                                    <img
                                         src={communityInfo.community_source_image}
                                         alt="community_source_image"
                                         width={125}
@@ -141,8 +140,7 @@ const ClaimBadge: NextPage = memo(() => {
                         <div className="flex-none w-[125px] rounded-full">
                             {
                                 communityInfo && communityInfo?.badge_source_image && (
-                                    <Image
-                                        layout="responsive"
+                                    <img
                                         src={communityInfo.badge_source_image}
                                         alt="badge_source_image"
                                         width={125}

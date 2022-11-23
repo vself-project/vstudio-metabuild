@@ -3,7 +3,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import { type NextPage } from "next";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { memo, useEffect, useState } from "react";
 import { Tooltip } from "antd";
@@ -166,8 +165,7 @@ const Communities: NextPage = memo(() => {
             }`}
           >
             {communityInfo && communityInfo?.community_source_image && (
-              <Image
-                layout="responsive"
+              <img
                 src={communityInfo?.community_source_image}
                 alt="community_source_image"
                 width={125}
@@ -217,8 +215,7 @@ const Communities: NextPage = memo(() => {
                 }`}
               >
                 {communityInfo && communityInfo?.badge_source_image && (
-                  <Image
-                    layout="responsive"
+                  <img
                     src={communityInfo?.badge_source_image}
                     alt="badge_source_image"
                     width={125}

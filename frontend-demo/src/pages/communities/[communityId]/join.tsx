@@ -3,13 +3,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import { type NextPage } from "next";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { memo, useEffect, useState } from "react";
 import { useWalletSelector } from "../../../contexts/WalletSelectorContext";
 import { useContractInteractor } from "../../../utils";
 import type { ICommunityInfo } from "../../../data/interfaces";
-import communityIcon from "../../../images/community_icon.svg";
 
 const CommunityJoin: NextPage = memo(() => {
   const router = useRouter();
@@ -63,8 +61,7 @@ const CommunityJoin: NextPage = memo(() => {
         <div className="flex items-center gap-[50px]">
           <div className="w-[125px] rounded-full">
             {communityInfo && communityInfo?.community_source_image && (
-              <Image
-                layout="responsive"
+              <img
                 src={communityInfo?.community_source_image}
                 alt="community_source_image"
                 width={125}
