@@ -18,6 +18,7 @@ import {
 } from "../../utils";
 
 import * as wasm from "../../../../shared-utils/pkg";
+import { Mailchain } from '@mailchain/sdk';
 
 const DEFAULT_TEXT = "Copy to clipboard";
 const COPIED_TEXT = "Copied";
@@ -34,6 +35,7 @@ const Communities: NextPage = memo(() => {
   const [verificationResult, setVerificationResult] = useState<boolean | null>(
     null
   );
+  const [mailchainAddress, setMailchainAddress] = useState<string>("");
 
   const handleNavigate = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent> | undefined,
@@ -155,6 +157,34 @@ const Communities: NextPage = memo(() => {
       `/communities/${router.query.communityId}/claimbadge?commitment=${commitment}`
     );
   };
+
+  // Send prepared message to the address
+  const handleInvite = async (e: any) => {
+    try {
+      e.preventDefault();
+      // Create url to atach to message
+      const url = `https://zkp-demo.web.app/communities/${router.query.communityId}`;
+
+      // Connect to mailchain account through mnemonic phrase
+      const secretRecoveryPhrase = "inform shaft play erupt radio ladder wrestle try invest suit diary uncle switch pupil column elite green version before remove assume cram clip future";
+      const mailchain = Mailchain.fromSecretRecoveryPhrase(secretRecoveryPhrase);
+
+      // Send message
+      const result = await mailchain.sendMail({
+        from: `vself@mailchain.com`, // sender address
+        to: [mailchainAddress], // list of recipients (blockchain or mailchain addresses)
+        subject: 'vSelf invitation', // subject line
+        content: {
+            text: 'Hello from vSelf. 👋 Your private invitation.', // plain text body
+            //html: `<p>You have been invited to join private community. If you want to do so, follow <a href={${url}}>this link</a>.</p>`, // html body
+            html: `<p></p>`, // html body
+        },
+      });
+      console.log(result);
+    } catch(err) {
+      console.log(err);
+    }
+  }
 
   return (
     <div className="bg-white rounded-[20px] text-[#3D3D3D] font-inter w-full max-w-[1030px]">
@@ -404,20 +434,25 @@ const Communities: NextPage = memo(() => {
                 </div>
               </div>
 
-              {/* <div className="text-left mt-[25px]">
-                                <h1 className="text-[20px] leading-10 font-extrabold font-grotesk">Verify proof</h1>
-                                <div className="flex space-x-[20px] my-[5px] items-center">
-                                    <div className="flex-none w-[180px] text-[16px] font-bold">
-                                        proof:
-                                    </div>
-                                    <div className="flex-initial w-80">
-                                        <input className="bg-[#F5F5F5] rounded-full w-full py-[5px] px-[15px]" placeholder="near_account.testnet" />
-                                    </div>
-                                    <div className="flex-initial w-48">
-                                        <button className="w-full main-green-bg py-[5px] rounded-full">Verify</button>
-                                    </div>
-                                </div>
-                            </div> */}
+              <div className="text-left mt-[25px]">
+                  <h1 className="text-[20px] leading-10 font-extrabold font-grotesk">Invite via Mailchain</h1>
+                  <div className="flex space-x-[20px] my-[5px] items-center">
+                      <div className="flex-none w-[180px] text-[16px] font-bold">
+                          mailchain address:
+                      </div>
+                      <div className="flex-initial w-80">
+                        <input
+                          className="bg-[#F5F5F5] rounded-full w-full py-[5px] px-[15px]"
+                          placeholder="address@mailchain.com"
+                          value={mailchainAddress}
+                          onChange={(e) => {setMailchainAddress(e.target.value)}}
+                        />
+                      </div>
+                      <div className="flex-initial w-48">
+                          <button className="w-full main-green-bg py-[5px] rounded-full" onClick={handleInvite}>Send Invite</button>
+                      </div>
+                  </div>
+              </div>
             </>
           )}
       </div>
