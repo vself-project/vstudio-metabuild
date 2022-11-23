@@ -14,6 +14,8 @@ import star3Img from "../images/star3.svg";
 
 import homeStyles from "./index.module.scss";
 
+import { Mailchain } from '@mailchain/sdk';
+
 const Home: NextPage = memo(() => {
   const router = useRouter();
 
@@ -23,6 +25,28 @@ const Home: NextPage = memo(() => {
   ) => {
     router.push(path);
   };
+
+  // TODO DELETE
+  const testMailchain = () => {
+    // 25 word mnemonicPhrase
+    const secretRecoveryPhrase = "";
+    const mailchain = Mailchain.fromSecretRecoveryPhrase(secretRecoveryPhrase);
+
+    // Button handler
+    const onClick = async (e: any) => {
+      console.log('Hello');
+      const user = await mailchain.user();
+      console.log(`username: ${user.username}, address: ${user.address}`);
+    }
+
+    return (
+      <div>
+        <button style={{marginTop: 100, height: 50, width: 100, backgroundColor: 'red'}} onClick={onClick}>
+          Call Mailchain
+        </button>
+      </div>
+    )
+  }
 
   return (
     <div className={homeStyles.home}>
@@ -44,6 +68,8 @@ const Home: NextPage = memo(() => {
           <br />
           communities where the governance method is a choice
         </div>
+        {/* TEST MAILCHAIN */}
+        {testMailchain()}
       </div>
 
       <Container>

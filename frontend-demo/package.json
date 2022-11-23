@@ -14,6 +14,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mailchain/sdk": "^0.9.2",
     "@near-wallet-selector/coin98-wallet": "^7.2.0",
     "@near-wallet-selector/core": "^7.2.0",
     "@near-wallet-selector/default-wallets": "^7.2.0",
