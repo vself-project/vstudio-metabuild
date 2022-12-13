@@ -176,8 +176,7 @@ const Communities: NextPage = memo(() => {
         subject: 'vSelf invitation', // subject line
         content: {
             text: 'Hello from vSelf. 👋 Your private invitation.', // plain text body
-            //html: `<p>You have been invited to join private community. If you want to do so, follow <a href={${url}}>this link</a>.</p>`, // html body
-            html: `<p></p>`, // html body
+            html: `<p>You have been invited to join private community. If you want to do so, follow <a href={${url}}>this link</a>.</p>`, // html body
         },
       });
       console.log(result);
