@@ -21,13 +21,6 @@ We wish to demonstrate our design and implementation of an advanced community me
 
 ## Deployment 
 
-
-## Tech stack
-
-We've developed our Rust implementation of non-interactive ZK proof-of-set-membership and [MiMC](https://byt3bit.github.io/primesym/mimc/) hash preimage, compiled it into WebAssembly and published the resulting package to NPM. Biggest thanks to original bulletproof impelemntation of [dalek](https://github.com/zkcrypto/bulletproofs) and for great source of R1CS gadget examples by [lovesh](https://github.com/lovesh/bulletproofs-r1cs-gadgets)
-
-The package source code availible inside /shared-utils folder, and contains cryptographic building blocks we used for our solution along with automated tests.
-
 It's availible for download at [npm registry](https://www.npmjs.com/package/@vself_project/shared-utils). Currently it exports following functions:
 
 ```js
@@ -37,6 +30,14 @@ It's availible for download at [npm registry](https://www.npmjs.com/package/@vse
 4. prove_set_membership(Vec<Commitment> set, bigint secret, bigint salt) => MembershipProof
 5. verify_set_membership(Vec<Commitment> set, MembershipProof p) => bool
 ```
+
+## Tech stack
+
+We've developed our Rust implementation of non-interactive ZK proof-of-set-membership and [MiMC](https://byt3bit.github.io/primesym/mimc/) hash preimage, compiled it into WebAssembly and published the resulting package to NPM. Biggest thanks to original bulletproof impelemntation of [dalek](https://github.com/zkcrypto/bulletproofs) and for great source of R1CS gadget examples by [lovesh](https://github.com/lovesh/bulletproofs-r1cs-gadgets)
+
+The package source code availible inside /shared-utils folder, and contains cryptographic building blocks we used for our solution along with automated tests.
+
+
 
 ## Future plans
 
