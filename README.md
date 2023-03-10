@@ -46,7 +46,7 @@ Community management documentation is available [here.](https://vself-project.gi
 
 We've developed our Rust implementation of non-interactive ZK proof-of-set-membership and [MiMC](https://byt3bit.github.io/primesym/mimc/) hash preimage, compiled it into WebAssembly and published the resulting package to NPM. Biggest thanks to original bulletproof impelemntation of [dalek](https://github.com/zkcrypto/bulletproofs) and for great source of R1CS gadget examples by [lovesh](https://github.com/lovesh/bulletproofs-r1cs-gadgets)
 
-The package source code availible inside /shared-utils folder, and contains cryptographic building blocks we used for our solution along with automated tests.
+The package source code availible inside [/shared-utils](https://github.com/vself-project/vstudio-metabuild/tree/main/shared-utils) folder, and contains cryptographic building blocks we used for our solution along with automated tests.
 
 
 
