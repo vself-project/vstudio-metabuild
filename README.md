@@ -9,11 +9,11 @@ We wish to demonstrate our design and implementation of an advanced community me
 1. Any user creates community with 0 members providing proper description.
 2. People can use demo app to generate secret memebershipKey and pass it to community of choice.
 
-![image](images/add_member.png)
+![image](images/add.png)
 
 3. People can prove in zero-knwoledge their membership and recieve on-chain non-transferable NFT badge to account of their choosing. Currently both verification and proof generation are made on vStudio side.
 
-![image](images/set_membership.png)
+![image](images/verify.png)
 
 ## Our code and deliverables
 
