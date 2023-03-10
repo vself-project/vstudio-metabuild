@@ -14,7 +14,8 @@ This repo contains source code of the zero-knowledge proofs vSelf SDK. This func
 
 ![image](images/add.png)
 
-3. People can prove in zero-knwoledge their membership and recieve on-chain non-transferable NFT badge to account of their choosing. Currently both verification and proof generation are made on vStudio side.
+- Community member generates proof-of-membership & send this proof for a verifier.
+- Verifier checks proof-of-membership & processes the result of verification.
 
 ![image](images/verify.png)
 
