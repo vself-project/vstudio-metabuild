@@ -8,10 +8,9 @@ This repo contains source code of the zero-knowledge proofs vSelf SDK. This func
 
 ## Privacy preserving onboarding
 
-We wish to demonstrate our design and implementation of an advanced community members onboarding flow that preserves some privacy for participants.
-
-1. Any user creates community with 0 members providing proper description.
-2. People can use demo app to generate secret memebershipKey and pass it to community of choice.
+- Owner creates a private community.
+- User generates commitment from personal id and membership key.
+- Commitment uses to join given community.
 
 ![image](images/add.png)
 
@@ -21,14 +20,15 @@ We wish to demonstrate our design and implementation of an advanced community me
 
 ## Deployment 
 
-It's availible for download at [npm registry](https://www.npmjs.com/package/@vself_project/shared-utils). Currently it exports following functions:
+Package is availible at [npm registry](https://www.npmjs.com/package/@vself_project/shared-utils).
+```js
+npm install @vself_project/shared-utils
+```
 
 ```js
-1. mimc_hash(bigint left, bigint right) => Commitment
-2. prove_mimc_preimage(bigint secret, bigint salt) => Proof
-3. verify_mimc_preimage(Commitment c, Proof p) => bool
-4. prove_set_membership(Vec<Commitment> set, bigint secret, bigint salt) => MembershipProof
-5. verify_set_membership(Vec<Commitment> set, MembershipProof p) => bool
+mimc_hash(bigint left, bigint right) => Commitment
+prove_set_membership(Vec<Commitment> set, bigint secret, bigint salt) => MembershipProof
+verify_set_membership(Vec<Commitment> set, MembershipProof p) => bool
 ```
 
 ## Tech stack
