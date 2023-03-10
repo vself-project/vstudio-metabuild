@@ -19,21 +19,10 @@ We wish to demonstrate our design and implementation of an advanced community me
 
 ![image](images/verify.png)
 
-## Our code and deliverables
+## Deployment 
 
-### Frontend ([DEMO](https://zkp-demo.web.app/))
 
-Frontend application is built using Next.js metaframework and authorization is done via WalletSelector package maintained by NEAR. Frontend uses our public npm package for all
-client side cryptography. Also we used [T3 Stack](https://github.com/t3-oss/create-t3-app) boilerplate to add Typescript and Tailwind
-CSS support.
-
-### Smart contract
-
-Smart contract is deployed to testnet and is responsible for managing on-chain data. Currently it holds explicit list of membeship commitments for every community created. Each user can create any number of communities under ones control. Contract is implemented in Rust using [near-rs-sdk v4](https://github.com/near/near-sdk-rs), our source code and tests are in /contract folder of this repo.
-
-Deployed to: [communities_v4.sergantche.testnet](https://explorer.testnet.near.org/accounts/communities_v4.sergantche.testnet)
-
-### Shared ZKP utils
+## Tech stack
 
 We've developed our Rust implementation of non-interactive ZK proof-of-set-membership and [MiMC](https://byt3bit.github.io/primesym/mimc/) hash preimage, compiled it into WebAssembly and published the resulting package to NPM. Biggest thanks to original bulletproof impelemntation of [dalek](https://github.com/zkcrypto/bulletproofs) and for great source of R1CS gadget examples by [lovesh](https://github.com/lovesh/bulletproofs-r1cs-gadgets)
 
