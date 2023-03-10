@@ -32,6 +32,16 @@ prove_set_membership(Vec<Commitment> set, bigint secret, bigint salt) => Members
 verify_set_membership(Vec<Commitment> set, MembershipProof p) => bool
 ```
 
+## Demo
+
+The full demo of the private community & proof-of-membership is available in [web app.](https://vself.app/vstudio)
+
+Smart contract is used for on-chain storage of the community data & manage membership deloyed at [communities_v1.sergantche_dev.near](https://explorer.near.org/accounts/communities_v1.sergantche_dev.near)
+
+The contact source code is available in [vseld-dao](https://github.com/vself-project/vself-dao) & frontend source code in [vself-beta](https://github.com/vself-project/vself-beta)
+
+Community management documentation is available [here.](https://vself-project.gitbook.io/vself-project-documentation/community-management-toolkit)
+
 ## Tech stack
 
 We've developed our Rust implementation of non-interactive ZK proof-of-set-membership and [MiMC](https://byt3bit.github.io/primesym/mimc/) hash preimage, compiled it into WebAssembly and published the resulting package to NPM. Biggest thanks to original bulletproof impelemntation of [dalek](https://github.com/zkcrypto/bulletproofs) and for great source of R1CS gadget examples by [lovesh](https://github.com/lovesh/bulletproofs-r1cs-gadgets)
