@@ -4,7 +4,7 @@
 
 # vStudio-metabuild
 
-This repo contains source code of the zero-knowledge proofs vSelf SDK.  relevant documentation that was created durign METABUILD hackathon.
+This repo contains source code of the zero-knowledge proofs vSelf SDK. This functionality might be helpful for private onboarding use case. The package allows to generate commitment and generate & verify proof-of membership. 
 
 ## Privacy preserving onboarding
 
