@@ -1,6 +1,10 @@
-# NEAR Metabulid 3: vStudio
+<p align="center">
+  <img src="https://vself.app/ninja2.png" alt="Vself Ninja"/>
+</p>
 
-This repo contains all source code and relevant documentation that was created durign METABUILD hackathon.
+# vStudio-metabuild
+
+This repo contains source code of the zero-knowledge proofs vSelf SDK.  relevant documentation that was created durign METABUILD hackathon.
 
 ## Privacy preserving onboarding
 
