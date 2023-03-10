@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/New Logo Dark.png" alt="Vself NinjaBlack"/>
+  <img src="images/logo.png" alt="Vself NinjaBlack"/>
 </p>
 
 # vStudio-metabuild
