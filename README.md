@@ -52,10 +52,8 @@ The package source code availible inside /shared-utils folder, and contains cryp
 
 ## Future plans
 
-Our major intention to make this our library also runnable but we are having hopes to run verification)
-
 There are two major improvements we have in mind at the momement for cryptography R&D:
 
-1. Implementing Verkle trie as replacement for commitments accumulator, which allows us to scale size of community as proofs would have constant size independent of set size. Bulletproofs use Pedersen commitments as a part of a protocol which makes implementation pretty staightforward.
+- Implementing [Verkle trie](https://github.com/ethereum/research/blob/master/verkle_trie/verkle_trie.py) as replacement for commitments accumulator. It allows to scale size of community as proofs would have constant size independent of set size. Bulletproofs use [Pedersen commitments](https://www.getmonero.org/resources/moneropedia/pedersen-commitment.html?ref=panther-protocol-blog) as a part of a protocol which makes implementation pretty staightforward.
 
-2. Implementing proof-of-ownership of a public key, which will allow for interesting use cases (e.g. designated verifier proofs or consentual airdrops) on NEAR as it uses this particular curve (Ed25519).
+- Implementing proof-of-ownership of a public key, which allows to improve the private onboarding usecase & develop new interesting use cases such as designated verifier proofs or consentual airdrops on NEAR as it uses particular curve (Ed25519).
