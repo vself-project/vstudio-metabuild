@@ -9,8 +9,8 @@ This repo contains source code of the zero-knowledge proofs vSelf SDK. This func
 ## Privacy preserving onboarding
 
 - Owner creates a private community.
-- User generates commitment from personal id and membership key.
-- Commitment uses to join given community.
+- User generates commitment from public key and random salt.
+- Commitment uses to join the given community.
 
 ![image](images/add.png)
 
