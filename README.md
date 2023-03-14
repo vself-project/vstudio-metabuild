@@ -6,7 +6,7 @@
 
 This repo contains source code of the zero-knowledge proofs vSelf SDK. This functionality might be helpful for private onboarding use case. The package allows to generate commitment and generate & verify proof-of membership. 
 
-Source code is available [in /shared-utils](https://github.com/vself-project/vstudio-metabuild/tree/main/shared-utils)
+Source code is available in [/shared-utils](https://github.com/vself-project/vstudio-metabuild/tree/main/shared-utils)
 
 ## Privacy preserving onboarding
 
