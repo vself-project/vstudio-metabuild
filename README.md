@@ -2,9 +2,7 @@
   <img src="images/logo.png" alt="Vself NinjaBlack"/>
 </p>
 
-# vStudio: zero-knowledge vSelf SDK for privacy preserving onboarding 
-
-utils)
+# vStudio: zero-knowledge onboarding 
 
 ## Overview 
 This repo contains source code of the zero-knowledge proofs vSelf SDK. This functionality might be helpful for private onboarding use case. The package allows to generate commitment and generate & verify proof-of membership. 
