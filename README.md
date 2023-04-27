@@ -2,13 +2,16 @@
   <img src="images/logo.png" alt="Vself NinjaBlack"/>
 </p>
 
-# vStudio-metabuild
+# vStudio: zero-knowledge vSelf SDK for privacy preserving onboarding 
 
+utils)
+
+## Overview 
 This repo contains source code of the zero-knowledge proofs vSelf SDK. This functionality might be helpful for private onboarding use case. The package allows to generate commitment and generate & verify proof-of membership. 
 
 Source code is available in [/shared-utils](https://github.com/vself-project/vstudio-metabuild/tree/main/shared-utils)
 
-## Privacy preserving onboarding
+## Privacyw preserving onboarding
 
 - Owner creates a private community.
 - User generates commitment from public key and random salt.
